@@ -1,3 +1,13 @@
+PFM Customization
+=================
+
+This repository is my personal customization of the Prelude emacs setup.
+All the changes will be in the Personal folder.
+
+~Pietro
+
+-------------------------------------------------------------------------------
+
 [![License GPL 3][badge-license]](http://www.gnu.org/licenses/gpl-3.0.txt)
 [![Gratipay Team](https://img.shields.io/gratipay/team/prelude.svg?maxAge=2592000)](https://gratipay.com/prelude/)
 
