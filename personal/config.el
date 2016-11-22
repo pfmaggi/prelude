@@ -22,12 +22,18 @@
 ;;  ;; If there is more than one, they won't work right.
 )
 
-(set-frame-font "Inconsolata-12")
+;; (set-frame-font "Inconsolata-14")
 ;;(setq initial-scratch-message "ಠ_ಠ")
 ;; (load-theme 'solarized-dark t)
 
 (setq helm-ff-newfile-prompt-p nil)
 (set-language-environment "UTF-8")
+
+;;; I prefer option key for meta
+(setq mac-option-key-is-meta t
+      mac-command-key-is-meta nil
+      mac-command-modifier 'none
+      mac-option-modifier 'meta)
 
 ;; (global-auto-revert-mode 1)
 ;; (global-linum-mode 1)
