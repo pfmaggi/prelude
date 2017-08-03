@@ -23,12 +23,12 @@
 
 
 ;; (setq org-agenda-files (quote ("~/Dropbox/org/todo.org")))
-(setq org-agenda-files (list (concat my-dropbox-root "org/todo.org")
+(setq org-agenda-files (list (concat my-dropbox-root "org/home.org")
                              (concat my-dropbox-root "org/ideas.org")
                              (concat my-dropbox-root "org/HardOnC.org")
                              (concat my-dropbox-root "org/wannabe.org")
-                             (concat my-dropbox-root "org/Motorola.org")
-                             (concat my-dropbox-root "org/home.org")
+                             (concat my-dropbox-root "org/work.org")
+                             (concat my-dropbox-root "org/journal.org")
                              (concat my-dropbox-root "org/notes.org")))
 
 ;; (setq org-default-notes-file (concat org-directory "/inbox.org"))
