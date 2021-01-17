@@ -1,11 +1,9 @@
 ;;; prelude-global-keybindings.el --- Emacs Prelude: some useful keybindings.
 ;;
-;; Copyright © 2011-2016 Bozhidar Batsov
+;; Copyright © 2011-2020 Bozhidar Batsov
 ;;
 ;; Author: Bozhidar Batsov <bozhidar@batsov.com>
 ;; URL: https://github.com/bbatsov/prelude
-;; Version: 1.0.0
-;; Keywords: convenience
 
 ;; This file is not part of GNU Emacs.
 
@@ -46,9 +44,10 @@
 
 ;; Indentation help
 (global-set-key (kbd "C-^") 'crux-top-join-line)
+
 ;; Start proced in a similar manner to dired
 (unless (eq system-type 'darwin)
-    (global-set-key (kbd "C-x p") 'proced))
+  (global-set-key (kbd "C-x p") 'proced))
 
 ;; Start eshell or switch to it if it's active.
 (global-set-key (kbd "C-x m") 'eshell)
@@ -75,15 +74,12 @@
 
 (define-key 'help-command (kbd "C-i") 'info-display-manual)
 
-;; replace zap-to-char functionaity with the more powerful zop-to-char
+;; replace zap-to-char functionality with the more powerful zop-to-char
 (global-set-key (kbd "M-z") 'zop-up-to-char)
 (global-set-key (kbd "M-Z") 'zop-to-char)
 
 ;; kill lines backward
-(global-set-key (kbd "C-<backspace>") (lambda ()
-                                        (interactive)
-                                        (kill-line 0)
-                                        (indent-according-to-mode)))
+(global-set-key (kbd "C-<backspace>") 'crux-kill-line-backwards)
 
 (global-set-key [remap kill-whole-line] 'crux-kill-whole-line)
 
@@ -96,20 +92,21 @@
 ;; replace buffer-menu with ibuffer
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
-(unless (fboundp 'toggle-frame-fullscreen)
-  (global-set-key (kbd "<f11>") 'prelude-fullscreen))
-
 ;; toggle menu-bar visibility
 (global-set-key (kbd "<f12>") 'menu-bar-mode)
 
-(global-set-key (kbd "C-x g") 'magit-status)
-(global-set-key (kbd "C-x M-g") 'magit-dispatch-popup)
+;; Magit creates some global keybindings by default
+;; but it's a nice to complement them with this one
+(global-set-key (kbd "C-c g") 'magit-file-dispatch)
 
 (global-set-key (kbd "C-=") 'er/expand-region)
 
-(global-set-key (kbd "C-c j") 'avy-goto-word-or-subword-1)
+(global-set-key (kbd "C-c v") 'avy-goto-word-or-subword-1)
 (global-set-key (kbd "s-.") 'avy-goto-word-or-subword-1)
+
+;; improved window navigation with ace-window
 (global-set-key (kbd "s-w") 'ace-window)
+(global-set-key [remap other-window] 'ace-window)
 
 (provide 'prelude-global-keybindings)
 
